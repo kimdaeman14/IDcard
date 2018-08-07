@@ -5,27 +5,6 @@
 //  Created by kimdaeman14 on 2018. 8. 8..
 //  Copyright © 2018년 GoldenShoe. All rights reserved.
 //
-/*
-<menu>
-    <item>
-        <id>1</id>
-        <name>Margherita</name>
-        <cost>155</cost>
-        <description>Single cheese topping</description>
-    </item>
-    <item>
-        <id>2</id>
-        <name>Double Cheese Margherita</name>
-        <cost>225</cost>
-        <description>Loaded with Extra Cheese</description>
-    </item>
-    <item>
-        <id>3</id>
-        <name>Fresh Veggie</name>
-        <cost>110</cost>
-        <description>Oninon and Crisp capsicum</description>
-    </item>
-*/
 
 
 /*
@@ -53,7 +32,17 @@ class ViewController: UIViewController {
     var passName:Bool=false
     var parser = XMLParser()
     
-    @IBOutlet weak var lblNameData:UILabel!
+    var location = ""
+    var place = ""
+    var operatingTime = ""
+    var latitude = ""
+    
+    
+    @IBOutlet weak var locationData:UILabel!
+    @IBOutlet weak var placeData:UILabel!
+    @IBOutlet weak var operatingTimeData:UILabel!
+    @IBOutlet weak var latitudeData:UILabel!
+
 
     
     override func viewDidLoad() {
@@ -66,8 +55,11 @@ class ViewController: UIViewController {
                     let success:Bool = parser.parse()
                     if success {
                         print("parse success!")
-                        print(strXMLData)
-                        lblNameData.text = strXMLData
+                        locationData.text = location
+                        placeData.text = place
+                        operatingTimeData.text = operatingTime
+                        latitudeData.text = latitude
+
                     } else {
                         print("parse failure!")
                     }
@@ -108,13 +100,25 @@ extension ViewController: XMLParserDelegate {
     
     // 현재 태그에 담겨있는 string이 전달됩니다.
     func parser(_ parser: XMLParser, foundCharacters string: String) {
-        if(passName){
-            strXMLData=strXMLData+"\n\n"+string
-        }
+//        if(passName){
+//            strXMLData=strXMLData+"\n\n"+string
+//        }
+//        if(passData)
+//        {
+//            print(string)
+//        }
         
-        if(passData)
-        {
-            print(string)
+        switch currentElement {
+        case "설치장소":
+            location = string
+        case "설치위치":
+            place = string
+        case "운영시간":
+            operatingTime = string
+        case "위도":
+            latitude = string
+        default:
+            print("fail")
         }
     }
     
