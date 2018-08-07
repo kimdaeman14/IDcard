@@ -45,7 +45,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,XMLParserDelegate {
+class ViewController: UIViewController {
     
     var strXMLData:String = ""
     var currentElement:String = ""
@@ -59,45 +59,45 @@ class ViewController: UIViewController,XMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url:String="http://api.androidhive.info/pizza/?format=xml"
-        let urlToSend = URL(string: url)!
-        // Parse the XML
-        parser = XMLParser(contentsOf: urlToSend)!
-        parser.delegate = self
-        
-        let success:Bool = parser.parse()
-        
-        if success {
-            print("parse success!")
-            
-            print(strXMLData)
-            
-            lblNameData.text=strXMLData
-            
-        } else {
-            print("parse failure!")
+
+            if let path = Bundle.main.url(forResource: "idcard", withExtension: "xml"){
+                if let parser = XMLParser(contentsOf: path) {
+                    parser.delegate = self
+                    let success:Bool = parser.parse()
+                    if success {
+                        print("parse success!")
+                        print(strXMLData)
+                        lblNameData.text = strXMLData
+                    } else {
+                        print("parse failure!")
+                    }
+                    
+                }
         }
+      
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   
     
+}
+
+extension ViewController: XMLParserDelegate {
+    // parser가 시작 태그를 만나면 호출됩니다. Ex) <name>
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         currentElement=elementName;
-        if(elementName=="id" || elementName=="name" || elementName=="cost" || elementName=="description")
-        {
-            if(elementName=="name"){
-                passName=true;
+        
+            if(elementName=="설치장소" || elementName=="설치위치" || elementName=="운영시간" || elementName=="위도")
+            {
+                if(elementName=="name"){
+                    passName=true;
+                }
+                passData=true;
             }
-            passData=true;
-        }
     }
-    
+    // parser가 닫는 태그를 만나면 호출됩니다. Ex) </name>
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         currentElement="";
-        if(elementName=="id" || elementName=="name" || elementName=="cost" || elementName=="description")
+        if(elementName=="설치장소" || elementName=="설치위치" || elementName=="운영시간" || elementName=="위도")
         {
             if(elementName=="name"){
                 passName=false;
@@ -106,6 +106,7 @@ class ViewController: UIViewController,XMLParserDelegate {
         }
     }
     
+    // 현재 태그에 담겨있는 string이 전달됩니다.
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         if(passName){
             strXMLData=strXMLData+"\n\n"+string
@@ -117,9 +118,11 @@ class ViewController: UIViewController,XMLParserDelegate {
         }
     }
     
+    //에러발생하면 무슨에러인지 알려주는?
     private func parser(parser: XMLParser, parseErrorOccurred parseError: NSError) {
         NSLog("failure error: %@", parseError)
     }
+    
 }
 
 
