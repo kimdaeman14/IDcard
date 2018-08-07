@@ -5,7 +5,43 @@
 //  Created by kimdaeman14 on 2018. 8. 8..
 //  Copyright © 2018년 GoldenShoe. All rights reserved.
 //
+/*
+<menu>
+    <item>
+        <id>1</id>
+        <name>Margherita</name>
+        <cost>155</cost>
+        <description>Single cheese topping</description>
+    </item>
+    <item>
+        <id>2</id>
+        <name>Double Cheese Margherita</name>
+        <cost>225</cost>
+        <description>Loaded with Extra Cheese</description>
+    </item>
+    <item>
+        <id>3</id>
+        <name>Fresh Veggie</name>
+        <cost>110</cost>
+        <description>Oninon and Crisp capsicum</description>
+    </item>
+*/
 
+
+/*
+ <Row>
+    <설치장소>양평2동주민센터</설치장소>
+    <설치위치>민원실입구</설치위치>
+    <운영시간>08:30-18:00</운영시간>
+    <소재지도로명주소>서울특별시 영등포구 양평로20길 8-1(양평동4가)</소재지도로명주소>
+    <소재지지번주소>서울특별시 영등포구 양평동4가 172-1</소재지지번주소>
+    <관리기관명>서울특별시 영등포구청</관리기관명>
+    <전화번호>02-2670-3106</전화번호>
+    <위도>37.537755</위도>
+    <경도>126.895949</경도>
+    <데이터기준일자>2018-02-20</데이터기준일자>
+ </Row>
+ */
 
 import UIKit
 

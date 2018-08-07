@@ -12,6 +12,7 @@
 		A71DD42E211A04970021ED34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71DD42C211A04970021ED34 /* Main.storyboard */; };
 		A71DD430211A04990021ED34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71DD42F211A04990021ED34 /* Assets.xcassets */; };
 		A71DD433211A04990021ED34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71DD431211A04990021ED34 /* LaunchScreen.storyboard */; };
+		A71DD43B211A07FC0021ED34 /* 서울특별시_영등포구_무인민원발급정보_20180220.xml in Resources */ = {isa = PBXBuildFile; fileRef = A71DD43A211A07FB0021ED34 /* 서울특별시_영등포구_무인민원발급정보_20180220.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		A71DD42F211A04990021ED34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A71DD432211A04990021ED34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A71DD434211A04990021ED34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A71DD43A211A07FB0021ED34 /* 서울특별시_영등포구_무인민원발급정보_20180220.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "서울특별시_영등포구_무인민원발급정보_20180220.xml"; path = "../../../../Downloads/서울특별시_영등포구_무인민원발급정보_20180220.xml"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				A71DD42C211A04970021ED34 /* Main.storyboard */,
 				A71DD42F211A04990021ED34 /* Assets.xcassets */,
 				A71DD431211A04990021ED34 /* LaunchScreen.storyboard */,
+				A71DD43A211A07FB0021ED34 /* 서울특별시_영등포구_무인민원발급정보_20180220.xml */,
 				A71DD434211A04990021ED34 /* Info.plist */,
 			);
 			path = IDcard;
@@ -122,6 +125,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A71DD43B211A07FC0021ED34 /* 서울특별시_영등포구_무인민원발급정보_20180220.xml in Resources */,
 				A71DD433211A04990021ED34 /* LaunchScreen.storyboard in Resources */,
 				A71DD430211A04990021ED34 /* Assets.xcassets in Resources */,
 				A71DD42E211A04970021ED34 /* Main.storyboard in Resources */,
